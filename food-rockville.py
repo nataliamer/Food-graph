@@ -46,8 +46,8 @@ layout = go.Layout(
     font=dict(family='Calibri, monospace', size=20, color='black'),
     xaxis = dict(title = 'Distance (km)'), # x-axis label
     yaxis = dict(title = 'Rating'),
-    width = 1100,
-    height = 800,
+    width = 800,
+    height = 580,
     margin=go.layout.Margin(
         l=100,
         r=50,
