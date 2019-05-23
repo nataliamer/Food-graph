@@ -22,10 +22,10 @@ data = [go.Scatter(
     x = df.loc[df['price_level'] == 1, 'dist_km'],
     y = df.loc[df['price_level'] == 1, 'rating'],
     dy = 0.5,
-    text=df['name'],
-    mode='markers',
-    name='$',
-    marker= dict(size= 10* np.log(df['user_ratings_total']), line = dict(
+    text = 'Cafe: ' + df['name'],
+    mode = 'markers',
+    name = '$',
+    marker= dict(size= 5* np.log(df['user_ratings_total']), line = dict(
             width = 2, color = 'black'),
     color = df.loc[df['price_level'] == 1, 'color'])),
 
@@ -33,7 +33,7 @@ data = [go.Scatter(
         x = df.loc[df['price_level'] == 2, 'dist_km'],
         y = df.loc[df['price_level'] == 2, 'rating'],
         dy = 0.5,
-        text=df['name'],
+        text='Cafe: ' + df['name'],
         name='$$',
         mode='markers',
         marker= dict(size= 10* np.log(df['user_ratings_total']), line = dict(
@@ -46,8 +46,9 @@ layout = go.Layout(
     font=dict(family='Calibri, monospace', size=20, color='black'),
     xaxis = dict(title = 'Distance (km)'), # x-axis label
     yaxis = dict(title = 'Rating'),
-    width = 800,
-    height = 580,
+    width = 1100,
+    height = 800,
+    hovermode='closest',
     margin=go.layout.Margin(
         l=100,
         r=50,
